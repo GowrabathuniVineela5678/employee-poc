@@ -16,19 +16,19 @@ public class EmployeeController {
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    // ✅ Create / Insert
+    //  Create/Insert
     @PostMapping
     public Employee createEmployee(@RequestBody Employee employee) {
         return employeeRepository.save(employee);
     }
 
-    // ✅ Get All
+    //  Get All
     @GetMapping
     public List<Employee> getAllEmployees() {
         return employeeRepository.findAll();
     }
 
-    // ✅ Get by ID
+    //  Get by ID
     @GetMapping("/{id}")
     public ResponseEntity<Employee> getEmployeeById(@PathVariable Long id) {
         Optional<Employee> employee = employeeRepository.findById(id);
@@ -36,7 +36,7 @@ public class EmployeeController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    // ✅ Update
+    //  Update
     @PutMapping("/{id}")
     public ResponseEntity<Employee> updateEmployee(
             @PathVariable Long id,
@@ -52,7 +52,7 @@ public class EmployeeController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    // ✅ Delete
+    //  Delete By ID
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteEmployee(@PathVariable Long id) {
         if (employeeRepository.existsById(id)) {
@@ -62,6 +62,7 @@ public class EmployeeController {
             return ResponseEntity.notFound().build();
         }
     }
+    // Delete
     @DeleteMapping
     public ResponseEntity<Void> deleteAllEmployees() {
         employeeRepository.deleteAll();
