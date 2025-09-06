@@ -12,7 +12,7 @@
 	<artifactId>employee-poc</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>employee-poc</name>
-	<description>A Spring Boot Employee Proof-of-Concept project with Rest API and MySQL integration, leveraging Spring Data JPA.</description>
+	<description>A Spring Boot Project</description>
 	<url/>
 	<licenses>
 		<license/>
